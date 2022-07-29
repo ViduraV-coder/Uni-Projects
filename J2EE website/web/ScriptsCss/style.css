@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+section {
+    background-image: url(./Images/espresso-ground-coffee-beans-1296x728.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 99vw;
+    height: 96vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.person {
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+.LoginBox{
+    width: 380px;
+    height: 470px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 10px;
+    opacity:0.85;
+}
+h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 28px;
+    font-family:Arial;
+    font-weight:bold;
+}
+.LoginBox input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 50px;
+    color: black;
+    font-size: 12px;
+    width: 180px;
+}
+.btn{
+    font-weight: bold;
+    font-size: 22px;
+    border-radius:20px;
+    margin-bottom:0px;
+    position:absolute;
+    top:64%;
+    width:75%;
+    left: 50px;
+    right: 130px;
+    height: 7%;
+    background-color: palevioletred;
+    border: 0;
+}
+.uniAcct{
+    top:77%;
+    position:absolute;
+    bottom: 73px;
+    left: 60px;
+    text-decoration: none;
+    line-height: 10px;
+    color: blue;
+    border-radius:10px;
+    background-color: white;
+    height: 4%;
+    width:70%;
+    text-align: center;
+    padding-top: 5px;
+}
+.industryAcct{
+    top:84%;
+    position:absolute;
+    bottom: 73px;
+    left: 60px;
+    text-decoration: none;
+    line-height: 10px;
+    color: blue;
+    border-radius:10px;
+    background-color: white;
+    height: 4%;
+    width:70%;
+    text-align: center;
+    padding-top: 5px;
+}
+.stuAcct{
+    top:91%;
+    position:absolute;
+    bottom: 73px;
+    left: 60px;
+    text-decoration: none;
+    line-height: 10px;
+    color: blue;
+    border-radius:10px;
+    background-color: white;
+    height: 4%;
+    width:70%;
+    text-align: center;
+    padding-top: 5px;
+}
+.btn:hover{
+    background-color: aqua;
+}
+.LoginBox input[type="email"]{
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 50px;
+    color: black;
+    font-size: 12px;
+    width: 180px;
+}
+a:hover{
+    text-decoration: underline;
+}
+

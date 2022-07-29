@@ -1,0 +1,95 @@
+.person {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+    overflow: hidden;
+    
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+section {
+    background-image: url(images/study-notebooks.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.LoginBox{
+    width: 425px;
+    height: 570px;
+    background-color: white;
+    top: 53%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 10px;
+    opacity:0.8;
+    box-sizing: border-box;
+}
+h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 28px;
+    font-family:Arial;
+    font-weight:bold;
+}
+.LoginBox input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: black;
+    font-size: 12px;
+    width: 180px;
+}
+.btn1{
+    font-weight: bold;
+    font-size: large;
+    border-radius:10px;
+    margin-bottom:0px;
+    position:absolute;
+    top:88%;
+    width:100px;
+    left: 220px;
+    right: 130px;
+    height: 7%;
+    background-color: palevioletred;
+    border: 0;
+    
+}
+.btnn{
+    font-weight: bold;
+    font-size: large;
+    border-radius:10px;
+    margin-bottom:0px;
+    position:absolute;
+    top:88%;
+    width:100px;
+    left: 100px;
+    right: 130px;
+    height: 7%;
+    background-color: palevioletred;
+    border: 0;
+}
+.LoginBox input[type="email"]{
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: black;
+    font-size: 12px;
+    width: 180px;
+}

@@ -1,0 +1,248 @@
+<!-- Session Check and Start -->
+<?php
+session_start();
+if(isset($_SESSION['logged_user'])){
+}
+else{
+	header('Location: login.php');
+	}
+?>
+<!-- End -->
+
+<!--View Cart count -->
+<?php 
+
+include ("DBConnect.php");
+// GENERATE CART COUNT
+$queryGet = 'SELECT * FROM cart WHERE Username="'.$_SESSION['logged_user'].'"';
+
+$resultFrm = mysql_query($queryGet);
+
+$x = 0;
+
+	while($recordsFrm=mysql_fetch_array($resultFrm)) 
+	{
+		$x = $x + 1;
+	}
+	
+	
+?>
+<!-- End -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Shop Cart LK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!--Less styles -->
+   <!-- Other Less css file //different less files has different color scheam
+	<link rel="stylesheet/less" type="text/css" href="themes/less/simplex.less">
+	<link rel="stylesheet/less" type="text/css" href="themes/less/classified.less">
+	<link rel="stylesheet/less" type="text/css" href="themes/less/amelia.less">  MOVE DOWN TO activate
+	-->
+	<!--<link rel="stylesheet/less" type="text/css" href="themes/less/bootshop.less">
+	<script src="themes/js/less.js" type="text/javascript"></script> -->
+	
+<!-- Bootstrap style --> 
+    <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
+    <link href="themes/css/base.css" rel="stylesheet" media="screen"/>
+<!-- Bootstrap style responsive -->	
+	<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+	<link href="themes/css/font-awesome.css" rel="stylesheet" type="text/css">
+<!-- Google-code-prettify -->	
+	<link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet"/>
+<!-- fav and touch icons -->
+    <link rel="shortcut icon" href="themes/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="themes/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="themes/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
+	<style type="text/css" id="enject"></style>
+  </head>
+<body>
+<div id="header">
+<div class="container">
+<div id="welcomeLine" class="row">
+	<div class="span6">Welcome <strong> <?php echo $_SESSION['CusName'];?> </strong>!</div>
+	<div class="span6"></div>
+    <div class="pull-right">
+<a href="ViewCart.php"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> [ <?php echo $x; ?> ] Itemes in your cart </span> </a></div>
+</div>
+<!-- Navbar ================================================== -->
+<div id="logoArea" class="navbar">
+<a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+</a>
+  <div class="navbar-inner">
+    <a class="brand" href="index.php"><img src="themes/images/logo.png" alt="Bootsshop"/></a>
+		
+    <ul id="topMenu" class="nav pull-left">
+	 <li class="">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+	 <li class=""><a href="index.php">HOME</a></li>
+     <li class=""><a href="privacy.php">PRIVACY POLICY</a></li>
+     <li class=""><a href="faqs.php">FAQs</a></li>
+     <li class=""><a href="agrement.php">USER AGREEMENT</a></li>
+	 <li class=""><a href="About Us.php">ABOUT US</a></li>
+	 <li class=""><a href="contact.php">CONTACT</a></li>
+     <li class=""><a href="account.php">MY ACCOUNT</a></li>
+	 <li class="">
+      <a href="Logout.php"  style="padding-right:0"><span class="btn btn-large btn-success">Logout</span></a>
+	
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+<!-- Header End====================================================================== -->
+<div id="mainBody">
+<div class="container">
+	<hr class="soften">
+	<h1>PRIVACY POLICY </h1>
+	<hr class="soften"/>
+	<div class="row">
+		
+		<h4>Privacy and Confidentiality</h4>
+		<p>	Welcome to the ShopCart.lk website (the "Site") operated by Shop Cart Srilanka Ltd. We respect your privacy and want to protect your personal information. To learn more, please read this Privacy Policy.
+
+This Privacy Policy explains how we collect, use and (under certain conditions) disclose your personal information. This Privacy Policy also explains the steps we have taken to secure your personal information. Finally, this Privacy Policy explains your options regarding the collection, use and disclosure of your personal information. By visiting the Site directly or through another site, you accept the practices described in this Policy.
+
+Data protection is a matter of trust and your privacy is important to us. We shall therefore only use your name and other information which relates to you in the manner set out in this Privacy Policy. We will only collect information where it is necessary for us to do so and we will only collect information if it is relevant to our dealings with you.
+
+We will only keep your information for as long as we are either required to by law or as is relevant for the purposes for which it was collected.
+
+You can visit the Site and browse without having to provide personal details. During your visit to the Site you remain anonymous and at no time can we identify you unless you have an account on the Site and log on with your user name and password.
+			
+			
+		</p>		
+		<h4>1. Data that we collect</h4>
+        <p> We may collect various pieces of information if you seek to place an order for a product with us on the Site. 
+
+We collect, store and process your data for processing your purchase on the Site and any possible later claims, and to provide you with our services. We may collect personal information including, but not limited to, your title, name, gender, date of birth, email address, postal address, delivery address (if different), telephone number, mobile number, fax number, payment details, payment card details or bank account details. 
+
+We will use the information you provide to enable us to process your orders and to provide you with the services and information offered through our website and which you request. Further, we will use the information you provide to administer your account with us; verify and carry out financial transactions in relation to payments you make; audit the downloading of data from our website; improve the layout and/or content of the pages of our website and customize them for users; identify visitors on our website; carry out research on our users' demographics; send you information we think you may find useful or which you have requested from us, including information about our products and services, provided you have indicated that you have not objected to being contacted for these purposes. Subject to obtaining your consent we may contact you by email with details of other products and services. If you prefer not to receive any marketing communications from us, you can opt out at any time. </p>
+        
+        <h4>2. Cookies</h4>
+        <p> The acceptance of cookies is not a requirement for visiting the Site. However we would like to point out that the use of the 'basket' functionality on the Site and ordering is only possible with the activation of cookies. Cookies are tiny text files which identify your computer to our server as a unique user when you visit certain pages on the Site and they are stored by your Internet browser on your computer's hard drive. Cookies can be used to recognize your Internet Protocol address, saving you time while you are on, or want to enter, the Site. We only use cookies for your convenience in using the Site (for example to remember who you are when you want to amend your shopping cart without having to re-enter your email address) and not for obtaining or using any other information about you (for example targeted advertising). Your browser can be set to not accept cookies, but this would restrict your use of the Site. Please accept our assurance that our use of cookies does not contain any personal or private details and are free from viruses. If you want to find out more information about cookies, go to http://www.allaboutcookies.org or to find out about removing them from your browser, go to http://www.allaboutcookies.org/manage-cookies/index.html. 
+
+This website uses Google Analytics, a web analytics service provided by Google, Inc. ("Google"). Google Analytics uses cookies, which are text files placed on your computer, to help the website analyze how users use the site. The information generated by the cookie about your use of the website (including your IP address) will be transmitted to and stored by Google on servers in the United States. Google will use this information for the purpose of evaluating your use of the website, compiling reports on website activity for website operators and providing other services relating to website activity and internet usage. Google may also transfer this information to third parties where required to do so by law, or where such third parties process the information on Google's behalf. Google will not associate your IP address with any other data held by Google. You may refuse the use of cookies by selecting the appropriate settings on your browser, however please note that if you do this you may not be able to use the full functionality of this website. By using this website, you consent to the processing of data about you by Google in the manner and for the purposes set out above.</p>
+			
+            <h4>3. Security </h4>
+		
+<p>We have in place appropriate technical and security measures to prevent unauthorized or unlawful access to or accidental loss of or destruction or damage to your information. When we collect data through the Site, we collect your personal details on a secure server. We use firewalls on our servers. Our security procedures mean that we may occasionally request proof of identity before we disclose personal information to you. You are responsible for protecting against unauthorized access to your password and to your computer.
+
+</p>
+
+ <h4>4. Your rights </h4>
+		
+<p>
+If you are concerned about your data you have the right to request access to the personal data which we may hold or process about you. You have the right to require us to correct any inaccuracies in your data free of charge. At any stage you also have the right to ask us to stop using your personal data for direct marketing purposes.
+
+</p>
+
+
+	
+</div>
+</div>
+<!-- MainBody End ============================= -->
+<!-- Footer ================================================================== -->
+	<div  id="footerSection">
+	<div class="container">
+		<div class="row">
+			<div class="span3">
+				<h5>INFORMATION</h5>
+				<a href="index.php">HOME</a>  
+				<a href="About Us.php">ABOUT US</a>  
+				<a href="contact.php">CONTACT</a> 
+				
+			 </div>
+             <div class="span3">
+				<h5>SHOP CART LK</h5>
+				<a href="privacy.php">PRIVACY POLICY</a>  
+      			<a href="faqs.php">FAQs</a>  
+				<a href="agrement.php">User Agrement</a> 
+				
+			 </div>
+			<div class="span3">
+            <h5>ACCOUNT</h5>
+				<a href="account.php">YOUR ACCOUNT</a> 
+				
+			 </div>
+			
+			<div id="socialMedia" class="span3 pull-right">
+				<h5>SOCIAL MEDIA </h5>
+				<a href="#"><img width="60" height="60" src="themes/images/facebook.png" title="facebook" alt="facebook"/></a>
+				<a href="#"><img width="60" height="60" src="themes/images/twitter.png" title="twitter" alt="twitter"/></a>
+				<a href="#"><img width="60" height="60" src="themes/images/youtube.png" title="youtube" alt="youtube"/></a>
+			 </div> 
+		 </div>
+	</div><!-- Container End -->
+	</div>
+<!-- Placed at the end of the document so the pages load faster ============================================= -->
+	<script src="themes/js/jquery.js" type="text/javascript"></script>
+	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="themes/js/google-code-prettify/prettify.js"></script>
+	
+	<script src="themes/js/bootshop.js"></script>
+    <script src="themes/js/jquery.lightbox-0.5.js"></script>
+	
+	<!-- Themes switcher section ============================================================================================= -->
+<div id="secectionBox">
+<link rel="stylesheet" href="themes/switch/themeswitch.css" type="text/css" media="screen" />
+<script src="themes/switch/theamswitcher.js" type="text/javascript" charset="utf-8"></script>
+	<div id="themeContainer">
+	<div id="hideme" class="themeTitle">Style Selector</div>
+	<div class="themeName">Oregional Skin</div>
+	<div class="images style">
+	<a href="themes/css/#" name="bootshop"><img src="themes/switch/images/clr/bootshop.png" alt="bootstrap business templates" class="active"></a>
+	<a href="themes/css/#" name="businessltd"><img src="themes/switch/images/clr/businessltd.png" alt="bootstrap business templates" class="active"></a>
+	</div>
+	<div class="themeName">Bootswatch Skins (11)</div>
+	<div class="images style">
+		<a href="themes/css/#" name="amelia" title="Amelia"><img src="themes/switch/images/clr/amelia.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="spruce" title="Spruce"><img src="themes/switch/images/clr/spruce.png" alt="bootstrap business templates" ></a>
+		<a href="themes/css/#" name="superhero" title="Superhero"><img src="themes/switch/images/clr/superhero.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="cyborg"><img src="themes/switch/images/clr/cyborg.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="cerulean"><img src="themes/switch/images/clr/cerulean.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="journal"><img src="themes/switch/images/clr/journal.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="readable"><img src="themes/switch/images/clr/readable.png" alt="bootstrap business templates"></a>	
+		<a href="themes/css/#" name="simplex"><img src="themes/switch/images/clr/simplex.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="slate"><img src="themes/switch/images/clr/slate.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="spacelab"><img src="themes/switch/images/clr/spacelab.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="united"><img src="themes/switch/images/clr/united.png" alt="bootstrap business templates"></a>
+		<p style="margin:0;line-height:normal;margin-left:-10px;display:none;"><small>These are just examples and you can build your own color scheme in the backend.</small></p>
+	</div>
+	<div class="themeName">Background Patterns </div>
+	<div class="images patterns">
+		<a href="themes/css/#" name="pattern1"><img src="themes/switch/images/pattern/pattern1.png" alt="bootstrap business templates" class="active"></a>
+		<a href="themes/css/#" name="pattern2"><img src="themes/switch/images/pattern/pattern2.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern3"><img src="themes/switch/images/pattern/pattern3.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern4"><img src="themes/switch/images/pattern/pattern4.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern5"><img src="themes/switch/images/pattern/pattern5.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern6"><img src="themes/switch/images/pattern/pattern6.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern7"><img src="themes/switch/images/pattern/pattern7.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern8"><img src="themes/switch/images/pattern/pattern8.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern9"><img src="themes/switch/images/pattern/pattern9.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern10"><img src="themes/switch/images/pattern/pattern10.png" alt="bootstrap business templates"></a>
+		
+		<a href="themes/css/#" name="pattern11"><img src="themes/switch/images/pattern/pattern11.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern12"><img src="themes/switch/images/pattern/pattern12.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern13"><img src="themes/switch/images/pattern/pattern13.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern14"><img src="themes/switch/images/pattern/pattern14.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern15"><img src="themes/switch/images/pattern/pattern15.png" alt="bootstrap business templates"></a>
+		
+		<a href="themes/css/#" name="pattern16"><img src="themes/switch/images/pattern/pattern16.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern17"><img src="themes/switch/images/pattern/pattern17.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern18"><img src="themes/switch/images/pattern/pattern18.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern19"><img src="themes/switch/images/pattern/pattern19.png" alt="bootstrap business templates"></a>
+		<a href="themes/css/#" name="pattern20"><img src="themes/switch/images/pattern/pattern20.png" alt="bootstrap business templates"></a>
+		 
+	</div>
+	</div>
+</div>
+<span id="themesBtn"></span>
+</body>
+</html>
